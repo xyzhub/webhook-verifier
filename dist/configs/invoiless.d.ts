@@ -1,7 +1,6 @@
-import { WebhookConfig } from '../webhook-verifier';
+import { WebhookConfig } from '../webhook-verifier.js';
 /**
  * Configuration template for Invoiless webhooks
  * Note: You must provide your own secretKey when using this config
  */
-declare const invoilessConfig: Omit<WebhookConfig, 'secretKey'>;
-export default invoilessConfig;
+export declare const invoiless: Omit<WebhookConfig, 'secretKey'>;

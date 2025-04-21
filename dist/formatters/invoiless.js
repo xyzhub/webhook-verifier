@@ -1,10 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
- * Custom formatter for Invoiless webhooks
- * @param payload The webhook payload to format
- * @returns Formatted string for Invoiless webhook verification
+ * Invoiless webhook formatter
  */
-exports.default = (payload) => {
+export const invoiless = (payload) => {
     return JSON.stringify(payload);
 };

@@ -1,1 +1,1 @@
-export * from './webhook-verifier';
+export * from './webhook-verifier.js';

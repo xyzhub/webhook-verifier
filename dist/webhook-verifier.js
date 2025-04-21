@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookVerifier = void 0;
-const node_crypto_1 = __importDefault(require("node:crypto"));
-class WebhookVerifier {
+import crypto from 'node:crypto';
+export class WebhookVerifier {
     constructor(config) {
         this.config = {
             debug: false,
@@ -21,7 +15,7 @@ class WebhookVerifier {
         }
     }
     generateHash(payload) {
-        const hmac = node_crypto_1.default.createHmac(this.config.hashAlgorithm, this.config.secretKey);
+        const hmac = crypto.createHmac(this.config.hashAlgorithm, this.config.secretKey);
         hmac.update(payload);
         return hmac.digest(this.config.encoding);
     }
@@ -127,7 +121,6 @@ class WebhookVerifier {
         }
     }
 }
-exports.WebhookVerifier = WebhookVerifier;
 // Example usage:
 /*
 // Example 1: Simple JSON payload with base64 signature

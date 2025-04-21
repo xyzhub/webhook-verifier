@@ -1,8 +1,6 @@
-import { WebhookPayload } from '../webhook-verifier';
+import { WebhookPayload } from '../webhook-verifier.js';
 /**
- * Custom formatter for Tap webhooks
- * @param payload The webhook payload to format
- * @returns Formatted string for Tap webhook verification
+ * TAP Payments formatter
+ * Formats the payload according to TAP's webhook signature requirements
  */
-declare const _default: (payload: WebhookPayload) => string;
-export default _default;
+export declare const tap: (payload: WebhookPayload) => string;
