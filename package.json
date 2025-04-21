@@ -1,0 +1,41 @@
+{
+  "name": "@xyz/webhook-verifier",
+  "version": "1.0.0",
+  "description": "A library for verifying webhook signatures",
+  "main": "dist/webhook-verifier.js",
+  "types": "dist/webhook-verifier.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "webhook",
+    "signature",
+    "verification",
+    "security"
+  ],
+  "author": "Baker @ XYZ",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3",
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.11",
+    "ts-jest": "^29.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyzhub/webhook-verifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xyzhub/webhook-verifier/issues"
+  },
+  "homepage": "https://github.com/xyzhub/webhook-verifier#readme"
+} 

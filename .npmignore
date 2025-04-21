@@ -1,0 +1,18 @@
+# Source files
+lib/
+tsconfig.json
+jest.config.js
+
+# Tests
+**/__tests__/
+coverage/
+
+# CI/CD
+.github/
+
+# Misc
+.editorconfig
+.gitignore
+.eslintrc
+.prettierrc
+*.log 
