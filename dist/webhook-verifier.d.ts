@@ -7,6 +7,7 @@ export interface VerificationResult {
     data?: any;
 }
 export interface WebhookConfig {
+    debug?: boolean;
     secretKey: string;
     signatureHeader: string;
     signaturePrefix?: string;
@@ -14,12 +15,23 @@ export interface WebhookConfig {
     encoding?: 'hex' | 'base64';
     payloadFormatter?: (payload: WebhookPayload) => string;
 }
-export declare const WEBHOOK_CONFIGS: Record<string, WebhookConfig>;
 export declare class WebhookVerifier {
-    private config;
+    readonly config: WebhookConfig;
     constructor(config: WebhookConfig);
     private generateHash;
     private formatSignature;
     private formatPayload;
-    verify(payload: WebhookPayload, signature: string): VerificationResult;
+    /**
+     * Extract signature from headers using the configured signatureHeader
+     * @param headers The headers object from the HTTP request
+     * @returns The extracted signature or undefined if not found
+     */
+    private extractSignature;
+    /**
+     * Verify webhook payload with signature or extract signature from headers
+     * @param payload The webhook payload to verify
+     * @param signatureOrHeaders Either a signature string or headers object
+     * @returns Verification result
+     */
+    verify(payload: WebhookPayload, signatureOrHeaders: string | Record<string, any>): VerificationResult;
 }

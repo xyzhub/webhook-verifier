@@ -1,7 +1,7 @@
 {
   "name": "@xyz/webhook-verifier",
-  "version": "1.0.0",
-  "description": "A library for verifying webhook signatures",
+  "version": "1.1.0",
+  "description": "A lightweight library for verifying webhook signatures",
   "main": "dist/webhook-verifier.js",
   "types": "dist/webhook-verifier.d.ts",
   "files": [
