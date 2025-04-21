@@ -5,13 +5,13 @@ A lightweight library for verifying webhook signatures.
 ## Installation
 
 ```bash
-npm install webhook-verifier
+npm install @xyz/webhook-verifier
 ```
 
 ## Usage
 
 ```typescript
-import { WebhookVerifier } from 'webhook-verifier';
+import { WebhookVerifier } from '@xyz/webhook-verifier';
 
 // Create a verifier with your configuration
 const verifier = new WebhookVerifier({
@@ -80,8 +80,8 @@ The library includes predefined configuration templates for common webhook provi
 **Note: These templates do not include a secret key - you must provide your own.**
 
 ```typescript
-import { WebhookVerifier } from 'webhook-verifier';
-import { tap, invoiless } from 'webhook-verifier/configs';
+import { WebhookVerifier } from '@xyz/webhook-verifier';
+import { tap, invoiless } from '@xyz/webhook-verifier/configs';
 
 // Using a predefined config template (you must add your secret key)
 const tapVerifier = new WebhookVerifier({
@@ -112,8 +112,8 @@ const customVerifier = new WebhookVerifier({
 The library provides specialized formatters for common webhook providers, which can be imported directly:
 
 ```typescript
-import { WebhookVerifier } from 'webhook-verifier';
-import { tap, invoiless } from 'webhook-verifier/formatters';
+import { WebhookVerifier } from '@xyz/webhook-verifier';
+import { tap, invoiless } from '@xyz/webhook-verifier/formatters';
 
 // Using a pre-defined formatter
 const verifier = new WebhookVerifier({
@@ -128,7 +128,7 @@ const verifier = new WebhookVerifier({
 You can create your own custom formatters by defining a function that takes a webhook payload and returns a string:
 
 ```typescript
-import { WebhookVerifier, WebhookPayload } from 'webhook-verifier';
+import { WebhookVerifier, WebhookPayload } from '@xyz/webhook-verifier';
 
 // Define a custom formatter
 const myCustomFormatter = (payload: WebhookPayload): string => {
