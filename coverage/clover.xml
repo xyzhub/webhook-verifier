@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745224046174" clover="3.2.0">
-  <project timestamp="1745224046174" name="All files">
+<coverage generated="1745224800893" clover="3.2.0">
+  <project timestamp="1745224800893" name="All files">
     <metrics statements="29" coveredstatements="23" conditionals="12" coveredconditionals="7" methods="5" coveredmethods="5" elements="46" coveredelements="35" complexity="0" loc="29" ncloc="29" packages="1" files="1" classes="1"/>
     <file name="webhook-verifier.ts" path="/Users/baker/Packages/webhook-verifier/lib/webhook-verifier.ts">
       <metrics statements="29" coveredstatements="23" conditionals="12" coveredconditionals="7" methods="5" coveredmethods="5"/>

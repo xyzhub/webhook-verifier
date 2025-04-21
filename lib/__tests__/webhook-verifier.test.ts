@@ -1,7 +1,7 @@
 import { WebhookVerifier, WebhookPayload } from '../webhook-verifier';
 
 describe('WebhookVerifier', () => {
-  const secretKey = 'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ';
+  const secretKey = 'random-test-key';
   const signatureHeader = 'hashstring';
   
   let verifier: WebhookVerifier;
@@ -65,7 +65,7 @@ describe('WebhookVerifier', () => {
   
   it('should validate a correct signature', () => {
     // This is a pre-calculated signature for the test payload with the test secret
-    const signature = '242200f21daaa4305efc3cc5c8f38d3351f1313bddedb6c4f7a2be92775c2bbd';
+    const signature = 'db29b6c720bbbdbc17ea51983a2cbcd5e27335d3b0f133ca71381e897cb61755';
     const payload = {
       id: 'chg_TS04A5520250810b5FO2104705',
       object: 'charge',
@@ -180,7 +180,7 @@ describe('WebhookVerifier', () => {
     });
     
     // Pre-calculated signature for the custom formatted payload
-    const signature = '6e97de31362636110d4ed5bfd494760493c044ebd0bf648af2d491a2a1d1fc23';
+    const signature = 'daaefe52a27eef3aedf2f435f781419c60ce28e947937ce09acd04b942bfea3c';
     const payload = { test: 'data' };
     
     const result = customVerifier.verify(payload, signature);
