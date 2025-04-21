@@ -1,10 +1,8 @@
-import { WebhookPayload } from '../webhook-verifier';
+import { WebhookPayload } from '../webhook-verifier.js';
 
 /**
- * Custom formatter for Invoiless webhooks
- * @param payload The webhook payload to format
- * @returns Formatted string for Invoiless webhook verification
+ * Invoiless webhook formatter
  */
-export default (payload: WebhookPayload): string => {
+export const invoiless = (payload: WebhookPayload): string => {
   return JSON.stringify(payload);
-} 
+}; 

@@ -1,16 +1,13 @@
-import { WebhookConfig } from '../webhook-verifier';
-import { invoiless } from '../formatters';
+import { WebhookConfig } from '../webhook-verifier.js';
+import { invoiless as invoilessFormatter } from '../formatters/index.js';
 
 /**
  * Configuration template for Invoiless webhooks
  * Note: You must provide your own secretKey when using this config
  */
-const invoilessConfig: Omit<WebhookConfig, 'secretKey'> = {
-  signatureHeader: 'invoiless-signature',
-  signaturePrefix: 'sha256=',
+export const invoiless: Omit<WebhookConfig, 'secretKey'> = {
+  signatureHeader: 'x-webhook-signature',
   hashAlgorithm: 'sha256',
-  encoding: 'base64',
-  payloadFormatter: invoiless
-};
-
-export default invoilessConfig; 
+  encoding: 'hex',
+  payloadFormatter: invoilessFormatter
+}; 

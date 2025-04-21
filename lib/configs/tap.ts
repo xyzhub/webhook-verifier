@@ -1,15 +1,13 @@
-import { WebhookConfig } from '../webhook-verifier';
-import { tap } from '../formatters';
+import { WebhookConfig } from '../webhook-verifier.js';
+import { tap as tapFormatter } from '../formatters/index.js';
 
 /**
  * Configuration template for Tap webhooks
  * Note: You must provide your own secretKey when using this config
  */
-const tapConfig: Omit<WebhookConfig, 'secretKey'> = {
+export const tap: Omit<WebhookConfig, 'secretKey'> = {
   signatureHeader: 'hashstring',
   hashAlgorithm: 'sha256',
   encoding: 'hex',
-  payloadFormatter: tap
-};
-
-export default tapConfig; 
+  payloadFormatter: tapFormatter
+}; 
