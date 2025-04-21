@@ -1,9 +1,26 @@
 {
   "name": "@xyz/webhook-verifier",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A lightweight library for verifying webhook signatures",
-  "main": "dist/webhook-verifier.js",
-  "types": "dist/webhook-verifier.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./configs": {
+      "import": "./dist/configs/index.js",
+      "require": "./dist/configs/index.js",
+      "types": "./dist/configs/index.d.ts"
+    },
+    "./formatters": {
+      "import": "./dist/formatters/index.js",
+      "require": "./dist/formatters/index.js",
+      "types": "./dist/formatters/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
