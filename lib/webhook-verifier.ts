@@ -1,5 +1,17 @@
 import crypto from 'node:crypto'
 
+/**
+ * Constant-time signature comparison. A plain `!==` returns as soon as one
+ * character differs, which leaks how much of a forged signature was right.
+ * Different lengths can never match, so they return false without comparing.
+ */
+export function signaturesMatch(received: string, expected: string): boolean {
+  const a = Buffer.from(received, 'utf8')
+  const b = Buffer.from(expected, 'utf8')
+  if (a.length !== b.length) return false
+  return crypto.timingSafeEqual(a, b)
+}
+
 // Types
 export interface WebhookPayload {
   [key: string]: any
@@ -142,7 +154,7 @@ export class WebhookVerifier {
         formattedPayload
       })
 
-      if (signature !== generatedSignature) {
+      if (!signaturesMatch(signature, generatedSignature)) {
         return {
           isValid: false,
           error: 'Invalid signature'

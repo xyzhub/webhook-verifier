@@ -1,3 +1,9 @@
+/**
+ * Constant-time signature comparison. A plain `!==` returns as soon as one
+ * character differs, which leaks how much of a forged signature was right.
+ * Different lengths can never match, so they return false without comparing.
+ */
+export declare function signaturesMatch(received: string, expected: string): boolean;
 export interface WebhookPayload {
     [key: string]: any;
 }

@@ -1,4 +1,4 @@
-import { WebhookVerifier, WebhookPayload } from '../webhook-verifier';
+import { WebhookVerifier, WebhookPayload, signaturesMatch } from '../webhook-verifier';
 import { tap } from '../configs';
 import { invoiless } from '../formatters';
 
@@ -364,3 +364,15 @@ describe('WebhookVerifier', () => {
   });
 
 }); 
+describe('signaturesMatch', () => {
+  it('accepts identical signatures', () => {
+    expect(signaturesMatch('abc123', 'abc123')).toBe(true)
+  })
+  it('rejects a different signature of the same length', () => {
+    expect(signaturesMatch('abc123', 'abc124')).toBe(false)
+  })
+  it('rejects a different length without throwing', () => {
+    expect(signaturesMatch('abc', 'abc123')).toBe(false)
+    expect(signaturesMatch('', 'abc')).toBe(false)
+  })
+})
